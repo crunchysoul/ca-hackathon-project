@@ -1,26 +1,46 @@
-<p id="notice"><%= notice %></p>
+<section class="row main">
+    <div class="col d-flex flex-wrap show_item">
+        <div class="p-2 item_image">
+            
+        </div>
+        <div class="p-2 item_info">
+            <h4><%= @listing.name %></h4>
+            <p>
+                <%= @listing.description %>
+            </p>
+            <div class="show_item_button_group">
+                <button>Message <%= @listing.user.profile.first_name %></button>
+                <%= link_to button_tag("View #{@listing.user.profile.first_name}'s Profile"), profile_path(@listing.user.profile) %>
+                <%= link_to button_tag("Close"), listings_path %>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- 
+<p id="notice"><%#= notice %></p>
 
 <p>
   <strong>Name:</strong>
-  <%= @listing.name %>
+  <%#= @listing.name %>
 </p>
 
 <p>
   <strong>Description:</strong>
-  <%= @listing.description %>
+  <%#= @listing.description %>
 </p>
 
 <p>
   <strong>Price:</strong>
-  <%= @listing.price %>
+  <%#= @listing.price %>
 </p>
 
-<% if @listing.photo_url(:original) %>
+<%# if @listing.photo_url(:original) %>
   <p>
     <strong>Photo data:</strong>
-    <%= image_tag @listing.photo_url(:original) %>
+    <%#= image_tag @listing.photo_url(:original) %>
   </p>
-<% end %>
+<%# end %> -->
 
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
+<%#= link_to 'Edit', edit_listing_path(@listing) %> |
+<%#= link_to 'Back', listings_path %>

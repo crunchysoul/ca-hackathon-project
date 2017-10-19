@@ -11,6 +11,7 @@ $item_background_color: #c4c4c4;
 $item_photo_background_color: #807c7c;
 $profile_photo_background_color: #c4c4c4;
 $snow: #f2f2f2;
+$black: #333333;
 $shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 /*
@@ -19,6 +20,7 @@ $shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 * {
   font-family: "Raleway", sans-serif;
+  color: $black;
 }
 
 body {
@@ -90,6 +92,11 @@ section.main {
     background: $want_background_color;
     padding-bottom: 25px;
     min-width: 350px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $black;
   }
 
   div.items_block {
@@ -219,10 +226,13 @@ section.main {
     div.item {
       margin-top: 15px;
       background: $item_background_color;
-      height: 140px;
+      min-height: 140px;
+      max-height: 500px;
+      // min-width: 450px;
       margin-left: 35px;
       margin-right: 35px;
       box-shadow: $shadow;
+      overflow: auto;
 
       div.item_photo {
         min-width: 140px;
@@ -230,12 +240,30 @@ section.main {
         background: $item_photo_background_color;
       }
       div.item_description {
+        overflow: auto;
+        margin-left: 10px;
+        min-height: 140px;
         h4 {
           margin-top: 10px;
           font-size: 48px;
           font-weight: bold;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* Item photo */
+  div.item_photo {
+    display: none;
+  }
+  /* Item title size */
+  div.item_description {
+    h4 {
+      margin-top: 10px;
+      font-size: 32px !important;
+      font-weight: bold;
     }
   }
 }
