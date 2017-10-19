@@ -1,12 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-  <h1>My Conversations</h1>
+<section class="conversations">
+  <h3>My Messages</h3>
 
   <% @conversations.each do |conversation| %>
-    <h2><%= link_to other_participant_name(conversation), conversation_path(conversation) %></h2>
-    <% if conversation.messages.count > 0 %>
-      <p><%= conversation.messages.last.body %></p>
-    <% end %>
+    <div class="inbox_item">
+      <h2><%= link_to other_participant_name(conversation), conversation_path(conversation) %></h2>
+      <% if conversation.messages.count > 0 %>
+        <p><%= conversation.messages.last.body %></p>
+      <% end %>
+    </div>
   <% end %>
-</div>
+</section>
