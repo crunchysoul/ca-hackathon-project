@@ -18,7 +18,9 @@
   <tbody>
     <% @listings.each do |listing| %>
       <tr>
-        <td><%= image_tag listing.user.profile.photo_url(:thumb) %></td>
+        <% if photo_url = listing.user.profile.photo_url(:thumb) %>
+          <td><%= image_tag photo_url %></td>
+        <% end %>
         <td><%= listing.user.profile.first_name %> <% listing.user.profile.first_name %></td>
         <td><%= listing.name %></td>
         <td><%= listing.description %></td>
