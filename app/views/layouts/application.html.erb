@@ -13,13 +13,13 @@
       <div class="left-nav">
         <ul>
           <li><a href="/">Listings</a></li>
-          <li><%= link_to 'My Profile', current_user.profile %></li>
+          <% if current_user %>
+            <li><%= link_to 'My Profile', current_user.profile %></li>
+          <% end %>
           <li><a href="#">Messages</a></li>
         </ul> 
       </div>
       <div class="right-nav">
-        <% if current_user %>
-        <% end %>
         <% if user_signed_in? %> 
           <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
         <% else %>
