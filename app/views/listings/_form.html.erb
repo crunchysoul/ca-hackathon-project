@@ -22,18 +22,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :listing_user_id %>
-  </div>
-
-  <div class="field">
     <%= form.label :price %>
     <%= form.text_field :price, id: :listing_price %>
   </div>
 
   <div class="field">
-    <%= form.label :photo_data %>
-    <%= form.text_area :photo_data, id: :listing_photo_data %>
+    <%= form.label :photo %>
+    <%= form.file_field :photo, id: :listing_photo %>
   </div>
 
   <div class="field">

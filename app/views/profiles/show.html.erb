@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<% if @profile.photo_url(:original) %>
+  <p>
+    <strong>Photo data:</strong>
+    <%= image_tag @profile.photo_url(:original) %>
+  </p>
+<% end %>
 <p>
   <strong>First name:</strong>
   <%= @profile.first_name %>
@@ -35,12 +41,6 @@
   <%= @profile.bio %>
 </p>
 
-<% if @profile.photo_url %>
-  <p>
-    <strong>Photo data:</strong>
-    <%= image_tag @profile.photo_url %>
-  </p>
-<% end %>
 
 <p>
   <strong>User:</strong>

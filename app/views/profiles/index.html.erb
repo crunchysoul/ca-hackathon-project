@@ -3,9 +3,9 @@
 <h1>Profiles</h1>
 
 <% @profiles.each do |profile| %>
-  <figure style="display: inline-block; width: 32%; height: 300px; overflow: hidden;">  
-    <% if profile.photo_url %>
-      <%= image_tag profile.photo_url %>
+  <figure style="display: inline-block; width: 32%; height: 500px; overflow: hidden;"> 
+    <% if profile.photo_url(:thumb) %> 
+      <%= image_tag profile.photo_url(:thumb), style: "width: 100px;" %>
     <% end %>
     <p><%= profile.first_name %> <%= profile.last_name %></p>
     <p>Dob: <%= profile.date_of_birth %></p>
