@@ -9,6 +9,27 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="d-flex justify-content-between">
+      <div class="left-nav">
+        <ul>
+          <li><a href="/">Listings</a></li>
+          <li><%= link_to 'My Profile', current_user.profile %></li>
+          <li><a href="#">Messages</a></li>
+        </ul> 
+      </div>
+      <div class="right-nav">
+        <% if current_user %>
+        <% end %>
+        <% if user_signed_in? %> 
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+        <% else %>
+          <a href="/users/sign_up">Sign Up</a>
+          <a href="/users/sign_in">Log In</a>
+        <% end %>
+      </div>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    <div class="container">
   </body>
 </html>
