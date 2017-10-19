@@ -10,16 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171019054327) do
+ActiveRecord::Schema.define(version: 20171019065324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "conversations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "followers", id: false, force: :cascade do |t|
     t.bigint "followed_id", null: false
     t.bigint "follower_id", null: false
     t.index ["followed_id", "follower_id"], name: "index_followers_on_followed_id_and_follower_id", unique: true
     t.index ["follower_id", "followed_id"], name: "index_followers_on_follower_id_and_followed_id", unique: true
+  end
+
+  create_table "followings", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followed_id"], name: "index_followings_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_followings_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_followings_on_follower_id"
   end
 
   create_table "listings", force: :cascade do |t|
@@ -33,6 +48,25 @@ ActiveRecord::Schema.define(version: 20171019054327) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_listings_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "body"
+    t.bigint "user_id"
+    t.bigint "conversation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "participations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "conversation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_participations_on_conversation_id"
+    t.index ["user_id"], name: "index_participations_on_user_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -70,5 +104,9 @@ ActiveRecord::Schema.define(version: 20171019054327) do
   add_foreign_key "followers", "users", column: "followed_id"
   add_foreign_key "followers", "users", column: "follower_id"
   add_foreign_key "listings", "users"
+  add_foreign_key "messages", "conversations"
+  add_foreign_key "messages", "users"
+  add_foreign_key "participations", "conversations"
+  add_foreign_key "participations", "users"
   add_foreign_key "profiles", "users"
 end

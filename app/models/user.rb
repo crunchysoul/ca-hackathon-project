@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_one :profile
+  has_many :messages
+  has_many :participations
+  has_many :conversations, through: :participations
 
   def followed_by?(user)
     followers.exists?(user.id)
