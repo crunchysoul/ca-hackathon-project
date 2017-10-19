@@ -5,6 +5,8 @@
 <table>
   <thead>
     <tr>
+      <th></th>
+      <th>User</th>
       <th>Name</th>
       <th>Description</th>
       <th>User</th>
@@ -16,6 +18,8 @@
   <tbody>
     <% @listings.each do |listing| %>
       <tr>
+        <td><%= image_tag listing.user.profile.photo_url(:thumb) %></td>
+        <td><%= listing.user.profile.first_name %> <% listing.user.profile.first_name %></td>
         <td><%= listing.name %></td>
         <td><%= listing.description %></td>
         <td><%= listing.price %></td>
