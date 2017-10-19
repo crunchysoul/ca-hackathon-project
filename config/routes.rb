@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   root 'listings#index'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+  # devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
+  # resources :users, only: [:show, :update], controller: :profiles
   resources :conversations
   resources :listings
   resources :profiles
