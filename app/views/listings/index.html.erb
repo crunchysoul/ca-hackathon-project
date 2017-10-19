@@ -3,16 +3,18 @@
       <div class="items_block">
           <h3>Things you may be interested in</h3>
           <% @listings.each do |listing| %>
-          <div class="row item">
-              <div class="col-2 item_photo" style="<%= style_backgound_image(listing.user.profile.photo_url(:thumb)) %>"></div>
-              <div class="col item_description">
-                  <h4><%= listing.name %></h4>
-                  <p>
-                    <%= listing.description %><br>
-                    Posted by <%= listing.user.profile.first_name %> <% listing.user.profile.first_name %>
-                  </p>
-              </div>
-          </div>
+          <a href=<%= "/listings/#{listing.id}" %>>
+            <div class="row item">
+                <div class="col-2 item_photo" style="<%= style_backgound_image(listing.user.profile.photo_url(:thumb)) %>"></div>
+                <div class="col item_description">
+                    <h4><%= listing.name %></h4>
+                    <p>
+                        <%= listing.description %><br>
+                        Posted by <%= listing.user.profile.first_name %> <% listing.user.profile.first_name %>
+                    </p>
+                </div>
+            </div>
+          </a>
           <% end %>
       </div>
 
