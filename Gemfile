@@ -38,6 +38,7 @@ gem 'image_processing'
 gem 'mini_magick'
 gem 'shrine'
 gem 'aws-sdk', '~> 3'
+gem 'rails_admin', '~> 1.2'
 
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'jquery-rails'

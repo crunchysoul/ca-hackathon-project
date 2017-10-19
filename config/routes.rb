@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :users
   resources :conversations
   resources :listings
-  devise_for :users
   resources :profiles
 
   get '/followers' => 'followers#index'
