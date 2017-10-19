@@ -69,6 +69,11 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:first_name, :last_name, :date_of_birth, :city, :country, :contact_number, :bio, :photo_data, :user_id)
+      params.require(:profile).permit(:first_name, :last_name, :date_of_birth, :city, :country, :contact_number, :bio, :photo, :user_id)
+    end
+
+    def performing_follow?
+      # Is there a 'toggle_follow' field in the form?
+      params.require(:user)[:toggle_follow].present?
     end
 end

@@ -35,10 +35,12 @@
   <%= @profile.bio %>
 </p>
 
-<p>
-  <strong>Photo data:</strong>
-  <%= @profile.photo_data %>
-</p>
+<% if @profile.photo_url %>
+  <p>
+    <strong>Photo data:</strong>
+    <%= image_tag @profile.photo_url %>
+  </p>
+<% end %>
 
 <p>
   <strong>User:</strong>
