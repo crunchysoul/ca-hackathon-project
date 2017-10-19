@@ -18,12 +18,10 @@
           <a href="/"><h1>Flotsy</h1></a>
       </div>
       <div class="col-4 navigation">
-          <%# if current_user %>
-          <%# end %>
           <% if user_signed_in? %> 
             <%= link_to 'My Profile', profile_path(current_user.profile.id) unless current_user.profile.nil? %> | 
             <%= link_to 'Messages', conversations_path %> | 
-            <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+            <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
           <% else %>
             <a href="/users/sign_up">Sign Up</a> | 
             <a href="/users/sign_in">Log In</a>
