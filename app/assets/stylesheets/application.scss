@@ -25,12 +25,34 @@ body {
   background: $body_bacground_color;
 }
 
-/*
-*   Show Profile Page
-*/
 section.header {
   background: $header_background_color;
   height: 120px;
+
+  div.navigation {
+    color: $snow;
+    text-align: right;
+    margin-right: 30px;
+    margin-top: 10px;
+
+    a {
+      text-decoration: none;
+      color: $snow;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+}
+
+/*
+*   Show Profile Page
+*/
+section.profile_header {
+  background: $header_background_color;
+  height: 120px;
+  margin-top: 20px;
 
   div.profile_info {
     height: 150px;
@@ -54,21 +76,6 @@ section.header {
         color: $snow;
         text-shadow: $shadow;
       }
-    }
-  }
-
-  div.navigation {
-    color: $snow;
-    text-align: right;
-    margin-right: 30px;
-    margin-top: 10px;
-
-    a {
-      text-decoration: none;
-      color: $snow;
-    }
-    a:hover {
-      text-decoration: underline;
     }
   }
 }
