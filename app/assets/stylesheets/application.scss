@@ -1,169 +1,343 @@
 @import "bootstrap";
 @import "profiles";
 
-$body_bacground_color: #e5e5e5;
+$body_bacground_color: #E5E5E5;
 $header_background_color: #626262;
-$footer_background_color: #626262;
-$have_background_color: #9e9e9e;
-$want_background_color: #dad9d9;
-$item_background_color: #c4c4c4;
-$item_photo_background_color: #807c7c;
-$profile_photo_background_color: #c4c4c4;
-$snow: #f2f2f2;
+// $footer_background_color: #626262;
+$have_background_color: #9E9E9E;
+$want_background_color: #DAD9D9;
+$item_background_color: #C4C4C4;
+$item_photo_background_color: #807C7C;
+$profile_photo_background_color: #C4C4C4; 
+$snow: #F2F2F2;
 $shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-// div.container {
-//     box-shadow: $shadow;
-// }
-
-// nav styles
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 30px;
-  h1 {
-    display: inline;
-    margin: 0;
-  }
-  ul {
-    display: flex;
-    list-style: none;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    li {
-      margin-right: 20px;
-    }
-  }
-}
+/*
+*   All pages
+*/
 
 * {
-  font-family: "Raleway", sans-serif;
+    font-family: 'Raleway', sans-serif;    
 }
 
 body {
-  background: $body_bacground_color;
+    background: $body_bacground_color;
 }
 
-p {
-  margin: 3px;
-}
-
+/*
+*   Show Profile Page
+*/
 section.header {
-  background: $header_background_color;
-  max-height: 120px;
+    background: $header_background_color;
+    height: 120px;
+    
+    div.profile_info {
+        height: 150px;
 
-  div.profile_info {
-    height: 150px;
+        div.profile_photo {
+            max-height: 100px;
+            max-width: 100px;
+            min-height: 100px;
+            min-width: 100px;
+            margin-left: 50px;
+            margin-top: 10px;
+            border-radius: 100%;
+            background: $profile_photo_background_color;
+        }
 
-    div.profile_photo {
-      max-height: 100px;
-      max-width: 100px;
-      min-height: 100px;
-      min-width: 100px;
-      margin-left: 50px;
-      margin-top: 10px;
-      border-radius: 100%;
-      background: $profile_photo_background_color;
+        div.profile_name {
+            margin-top: 23px;
+            h1 {
+                font-size: 64px;
+                font-family: 'Dancing Script', cursive;                
+                color: $snow;
+                text-shadow: $shadow;
+            }
+        }
     }
 
-    div.profile_name {
-      margin-top: 23px;
-      h1 {
-        font-size: 64px;
-        font-family: "Dancing Script", cursive;
+    div.navigation {
         color: $snow;
-        text-shadow: $shadow;
-      }
-    }
-  }
+        text-align: right;
+        margin-right: 30px;
+        margin-top: 10px;
 
-  div.navigation {
-    color: $snow;
-    text-align: right;
-    margin-right: 30px;
-  }
+        a {
+          text-decoration: none;
+          color: $snow;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+        
+    }
 }
 
 section.main {
-  div.have {
-    background: $have_background_color;
-    padding-bottom: 25px;
-    min-width: 350px;
-  }
-  div.want {
-    background: $want_background_color;
-    padding-bottom: 25px;
-    min-width: 350px;
-  }
-
-  div.items_block {
-    margin-top: 15px;
-
-    h3 {
-      margin-left: 35px;
+    
+    div.have {
+        background: $have_background_color;
+        padding-bottom: 25px;
+        min-width: 350px;
     }
-    div.item {
-      margin-top: 15px;
-      background: $item_background_color;
-      height: 70px;
-      margin-left: 35px;
-      margin-right: 35px;
-      box-shadow: $shadow;
+    div.want {
+        background: $want_background_color;
+        padding-bottom: 25px;
+        min-width: 350px;
+    }
 
-      div.item_photo {
-        min-width: 70px;
-        max-width: 70px;
-        background: $item_photo_background_color;
-      }
-      div.item_description {
-        h4 {
-          margin-top: 10px;
+    div.items_block {
+        margin-top: 15px;
+        
+        h3 {
+            margin-left: 35px;
         }
-      }
+        div.item {
+            margin-top: 15px;
+            background: $item_background_color;
+            height: 70px;
+            margin-left: 35px;
+            margin-right: 35px;
+            box-shadow: $shadow;
+
+            div.item_photo {
+                min-width: 70px;
+                max-width: 70px;
+                background: $item_photo_background_color;
+            }
+            div.item_description {
+                h4 {
+                    margin-top: 10px;
+                }
+            }
+        }
     }
-  }
-  div.items_block:first-of-type {
-    margin-top: 20px;
-  }
-}
-
-section.footer {
-  background: $footer_background_color;
-  height: 120px;
-}
-
-@media screen and (max-width: 830px) {
-  /* Profile name font size */
-  div.profile_name {
-    h1 {
-      font-size: 50px !important;
+    div.items_block:first-of-type {
+        margin-top: 20px;
     }
-  }
+
 }
 
-// @media screen and (max-width: 1000px) {
-//     /* Profile name font size */
-//     div.profile_name {
-//         h1 {
-//             font-size: 36px !important;
-//         }
-//     }
+// section.footer {
+//     background: $footer_background_color;
+//     height: 120px;
 // }
 
+@media screen and (max-width: 830px) {
+    /* Profile name font size */
+    div.profile_name {
+        h1 {
+            font-size: 50px !important;
+        }
+    }
+}
+
 @media screen and (max-width: 710px) {
-  /* Hide Navigation */
-  div.navigation {
-    display: none;
-  }
+    /* Hide Navigation */
+    div.navigation {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 453px) {
-  /* Profile name font size at 460px */
-  div.profile_name {
-    h1 {
-      // margin-top: 15px;
-      font-size: 40px !important;
+    /* Profile name font size */
+    div.profile_name {
+        h1 {
+            font-size: 40px !important;
+        }
     }
-  }
+}
+
+
+/*
+*   Landing Page
+*/
+section.header-landing {
+    background-color: $header_background_color;
+    height: 350px;
+
+    div.app_title {
+        margin-left: auto;
+        margin-right: auto;
+
+        h1 {
+            margin-top: 150px;
+            font-size: 144px;
+            font-family: 'Dancing Script', cursive;                
+            color: $snow;
+            text-shadow: $shadow;
+        }
+    }
+}
+
+section.buttons-landing {
+    margin-top: 50px;
+
+    div.button-group-landing {
+        width: 580px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        button {
+            display: block;
+            height: 50px;
+            width: 580px;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+/*
+*   Listing Page
+*/
+section.header {
+    div.header_title {
+        height: 150px;
+        margin-left: 35px;
+        margin-top: 15px;
+
+        a {
+          text-decoration: none;  
+        }
+        
+        h1 {
+            font-size: 64px;
+            font-family: 'Dancing Script', cursive;                
+            color: $snow;
+            text-shadow: $shadow;
+        }
+    }
+}
+
+section.main {
+    div.listing {
+        div.item {
+            margin-top: 15px;
+            background: $item_background_color;
+            height: 140px;
+            margin-left: 35px;
+            margin-right: 35px;
+            box-shadow: $shadow;
+
+            div.item_photo {
+                min-width: 140px;
+                max-width: 140px;
+                background: $item_photo_background_color;
+            }
+            div.item_description {
+                h4 {
+                    margin-top: 10px;
+                    font-size: 48px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+/*
+*   Show Item Page
+*/
+section.main {
+    div.show_item {
+        background: white;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+        padding: 0;
+        box-shadow: $shadow;
+
+        div.item_image {
+            width: 550px;
+            height: 550px;
+            
+            background: $item_photo_background_color;
+        }
+
+        div.item_info {
+            width: 450px;
+            margin-top: 20px;
+            h4 {
+                font-size: 36px;
+                text-align: center;
+            }
+            p {
+                margin-left: 20px;
+                margin-right: 20px;
+                font-size: 18px;
+            }
+            div.show_item_button_group {
+                width: 200px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 100px;
+                button {
+                    width: 200px;
+                    height: 30px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
+
+/*
+*   Messaging page
+*/
+section.main {
+    div.conversation {
+        background: white;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+        padding: 0;
+        box-shadow: $shadow;
+
+        form {
+            h4 {
+                margin-left: 10px;
+                margin-top: 10px;
+                font-size: 36px;
+            }
+            
+            div.input_conversation {
+                max-width: 1000px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-bottom: 10px;
+
+                input[type=text] {
+                    height: 59px;
+                    border: 1px solid gray;
+                    // border-radius: 4px;
+                    box-sizing: border-box;
+                    resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+                    font-size: 16px;
+                    margin-left: 10px;           
+                }
+
+                input[type=submit] {
+                    height: 59px;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        textarea {
+            width: 100%;
+            max-width: 980px;
+            height: 450px;
+            padding: 12px;
+            margin-left: 10px;
+            margin-right: 10px;
+            border: 0;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+    }
 }
