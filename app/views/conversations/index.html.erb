@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Conversations</h1>
+
+<% @conversations.each do |conversation| %>
+  <h2><%= link_to other_participant(conversation), conversation_path(conversation) %></h2>
+  <% if conversation.messages.count > 0 %>
+    <p><%= conversation.messages.last.content %></p>
+  <% end %>
+<% end %>
