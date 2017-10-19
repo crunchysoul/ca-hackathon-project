@@ -11,37 +11,35 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :listing_name %>
+  <div class="form-group">
+    <%= form.label "Short title for your new listing" %>
+    <%= form.text_field :name, id: :listing_name, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :listing_description %>
+  <div class="form-group">
+    <%= form.label "Description for your new listing" %>
+    <%= form.text_area :description, id: :listing_description, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price, id: :listing_price %>
+  <div class="form-group">
+    <%= form.label "Price" %>
+    <%= form.text_field :price, id: :listing_price, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :photo %>
-    <%= form.file_field :photo, id: :listing_photo %>
+    <%= form.file_field :photo, id: :listing_photo, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :category_id %>
-    <%= form.text_field :category_id, id: :listing_category_id %>
+    <%= form.text_field :category_id, id: :listing_category_id, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :item_type %>
-    <%= form.text_field :item_type, id: :listing_item_type %>
+  <div class="form-group">
+    <%= form.label "Is this an item you own or want to have?" %>
+    <%= form.select :status, options_for_select(Listing.statuses.map {|k, v| [k.humanize.capitalize, v]}), class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.submit class: "btn btn-primary"%>
 <% end %>

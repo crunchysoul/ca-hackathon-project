@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :messages
   has_many :participations
   has_many :conversations, through: :participations
+  has_many :listings
 
   def followed_by?(user)
     followers.exists?(user.id)

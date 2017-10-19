@@ -3,33 +3,29 @@
   <head>
     <title>CaHackathonProject</title>
     <%= csrf_meta_tags %>
-
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <nav class="d-flex justify-content-between">
-      <div class="left-nav">
-        <ul>
-          <li><a href="/">Listings</a></li>
-          <% if current_user %>
-            <li><%= link_to 'My Profile', current_user.profile %></li>
-          <% end %>
-          <li><a href="#">Messages</a></li>
-        </ul> 
-      </div>
-      <div class="right-nav">
-        <% if user_signed_in? %> 
-          <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-        <% else %>
-          <a href="/users/sign_up">Sign Up</a>
-          <a href="/users/sign_in">Log In</a>
+    <nav>
+      <ul>
+        <li><h1><%= link_to "Flotsy", root_path %></h1></li>
+        <% if user_signed_in? %>
+          <li><%= link_to 'My Conversations', conversations_path %></li>
         <% end %>
-      </div>
+      </ul>
+      <ul>
+        <% if user_signed_in? %>
+          <li><%= link_to "#{current_user.profile.first_name} #{current_user.profile.last_name}", current_user.profile %></li>
+          <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><a href="/users/sign_up">Sign Up</a></li>
+          <li><a href="/users/sign_in">Log In</a></li>
+        <% end %>
+      </ul>
     </nav>
-    <div class="container">
-      <%= yield %>
-    <div class="container">
+    <%= yield %>
   </body>
 </html>

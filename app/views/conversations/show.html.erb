@@ -1,4 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_conversation_path(@conversation) %> |
-<%= link_to 'Back', conversations_path %>
+<h1>Conversation with <%= other_participant_name @conversation %></h1>
+
+<% @conversation.messages.each do |message| %>
+  <div>
+  <h5><%= message.user.email %></h5>
+    <p><%= message.body %></p>
+  </div>
+<% end %>
+
+<%= form_with model: @message, local: true do |f| %>
+  <%= f.hidden_field :conversation_id, value: @conversation.id %>
+  <%= f.text_area :body, id: :body %>
+  <%= f.button "Send" %>
+<% end %>

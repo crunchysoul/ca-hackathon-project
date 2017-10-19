@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :conversations
   resources :listings
   resources :profiles
+  post 'messages' => 'messages#create'
 
   get '/followers' => 'followers#index'
   get '/following' => 'following#index'
