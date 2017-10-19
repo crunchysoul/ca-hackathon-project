@@ -1,4 +1,31 @@
-<p id="notice"><%= notice %></p>
+<section class="row main">
+    <div class="col d-flex flex-wrap show_item">
+        <div class="p-2 item_image">
+            
+        </div>
+        <div class="p-2 item_info">
+            <h4><%= @listing.name %></h4>
+            <p>
+                <%= @listing.description %>
+            </p>
+            <div class="show_item_button_group">
+                <!-- <button>Message <%#= @listing.user.profile.first_name %></button> -->
+                <%= form_with model: @conversation, local: true do |f| %>
+                  <%= f.hidden_field :user_id, value: @listing.user.id %>
+                  <%= f.button "Message #{@listing.user.profile.first_name}"  %>
+                  <%#= button_tag("Message #{@listing.user.profile.first_name}"), type: 'submit' %>
+                <% end %>
+
+                <%#= link_to button_tag("Message #{@listing.user.profile.first_name}"), conversation_path(conversation: @conversation, user_id: @listing.user.id), method: :create %>
+                <%= link_to button_tag("View #{@listing.user.profile.first_name}'s Profile"), profile_path(@listing.user.profile) %>
+                <%= link_to button_tag("Close"), listings_path %>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- 
+<p id="notice"><%#= notice %></p>
 
 <section class="row main">
   <div class="col d-flex flex-wrap show_item">
@@ -19,3 +46,27 @@
     </div>
   </div>
 </section>
+<p>
+  <strong>Name:</strong>
+  <%#= @listing.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%#= @listing.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%#= @listing.price %>
+</p>
+
+<%# if @listing.photo_url(:original) %>
+  <p>
+    <strong>Photo data:</strong>
+    <%#= image_tag @listing.photo_url(:original) %>
+  </p>
+<%# end %> -->
+
+<%#= link_to 'Edit', edit_listing_path(@listing) %>
+<%#= link_to 'Back', listings_path %>
