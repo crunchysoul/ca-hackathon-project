@@ -4,12 +4,12 @@
           <h3>Things you may be interested in</h3>
           <% @listings.each do |listing| %>
           <div class="row item">
-              <div class="col-2 item_photo" style="<%= style_backgound_image(listing.user.profile.photo_url(:thumb)) %>"></div>
+              <div class="col-2 item_photo" style="<%= style_backgound_image(listing.user.profile.photo_url(:thumb)) unless listing.user.profile.nil? %>"></div>
               <div class="col item_description">
                   <h4><%= listing.name %></h4>
                   <p>
                     <%= listing.description %><br>
-                    Posted by <%= listing.user.profile.first_name %> <% listing.user.profile.first_name %>
+                    Posted by <%= listing.user.profile.full_name unless listing.user.profile.nil? %>
                   </p>
               </div>
           </div>
