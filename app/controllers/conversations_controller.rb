@@ -16,15 +16,23 @@ class ConversationsController < ApplicationController
   # POST /conversations
   # POST /conversations.json
   def create
-    @conversation = Conversation.new(conversation_params)
+    if current_user.id == conversation_params[:user_id].to_i
+      redirect_back fallback_location: listings_path, notice: 'This listing belongs to you.'
+    elsif existing_conversation = Conversation.between(current_user.id, conversation_params[:user_id]).first
+      redirect_to conversation_path(existing_conversation.id)
+    else
+      @conversation = Conversation.new
+      current_user_participation = @conversation.participations.build(user: current_user)
+      other_participation = @conversation.participations.build(user: User.find_by(conversation_params[:user_id]))
 
-    respond_to do |format|
-      if @conversation.save
-        format.html { redirect_to @conversation, notice: 'Conversation was successfully created.' }
-        format.json { render :show, status: :created, location: @conversation }
-      else
-        format.html { render :new }
-        format.json { render json: @conversation.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @conversation.save && current_user_participation.save && other_participation.save
+          format.html { redirect_to @conversation, notice: 'Conversation was successfully created.' }
+          format.json { render :show, status: :created, location: @conversation }
+        else
+          format.html { render :new }
+          format.json { render json: @conversation.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -37,6 +45,6 @@ class ConversationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def conversation_params
-      params.fetch(:conversation, {})
+      params.require(:conversation).permit(:user_id)
     end
 end
