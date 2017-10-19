@@ -1,0 +1,38 @@
+/*
+*   Messaging page
+*/
+section.main {
+  .conversations {
+    margin-top: 20px;
+  }
+  .conversation-item {
+    margin-bottom: 40px;
+  }
+  div.conversation {
+    background: white;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    padding: 30px;
+    box-shadow: $shadow;
+
+    h4 {
+      font-size: 36px;
+    }
+
+    textarea {
+      width: 100%;
+      resize: vertical;
+      max-width: 980px;
+      height: 100px;
+      padding: 12px;
+      margin-left: 10px;
+      margin-right: 10px;
+      border: 1px solid gray;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+  }
+}

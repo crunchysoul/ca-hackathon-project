@@ -1,16 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Conversation with <%= other_participant_name @conversation %></h1>
+<section class="row main">
+  <div class="col conversation">
+    <h4>Conversation with <%= other_participant_name @conversation %></h4>
+    <div class="conversations">
+      <% @conversation.messages.each do |message| %>
+        <div class="conversation-item">
+          <h5><%= "#{message.user.profile.first_name} #{message.user.profile.last_name}" %></h5>
+          <p><%= message.body %></p>
+          <p><%= message.created_at.strftime("%e %b %Y %l:%M%p") %></p>
+        </div>
+      <% end %>
+    </div>
 
-<% @conversation.messages.each do |message| %>
-  <div>
-  <h5><%= message.user.email %></h5>
-    <p><%= message.body %></p>
+    <%= form_with model: @message, local: true do |f| %>
+      <div class="row input_conversation">
+        <%= f.hidden_field :conversation_id, value: @conversation.id %>
+        <%= f.text_area :body, id: :body, class: "col" %>
+        <%= f.button "Send", class: "col-2" %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</section>
 
-<%= form_with model: @message, local: true do |f| %>
-  <%= f.hidden_field :conversation_id, value: @conversation.id %>
-  <%= f.text_area :body, id: :body %>
-  <%= f.button "Send" %>
-<% end %>
