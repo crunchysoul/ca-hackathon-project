@@ -19,6 +19,9 @@
 class Profile < ApplicationRecord
   include ImageUploader::Attachment.new(:photo)
 
+  # validates :first_name, :last_name, :date_of_birth, :city, :country, presence: true
+  # validates :bio, length: {maximum: 400}
+
   belongs_to :user
 
   # Full Name (First Name and Last Name)
