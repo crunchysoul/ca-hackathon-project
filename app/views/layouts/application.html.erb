@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CaHackathonProject</title>
+    <title>Flotsy</title>
     <%= csrf_meta_tags %>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Raleway:300,400" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <nav class="d-flex justify-content-between">
-      <div class="left-nav">
-        <ul>
-          <li><a href="/">Listings</a></li>
-          <li><%= link_to 'My Profile', @profile %></li>
-          <li><a href="#">Messages</a></li>
-        </ul> 
+    <section class="row header">
+      <div class="col header_title">
+          <a href="/"><h1>Flotsy</h1></a>
       </div>
-      <div class="right-nav">
-        <% if current_user %>
-        <% end %>
-        <% if user_signed_in? %> 
-          <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-        <% else %>
-          <a href="/users/sign_up">Sign Up</a>
-          <a href="/users/sign_in">Log In</a>
-        <% end %>
+      <div class="col-4 navigation">
+          <%= link_to 'My Profile', @profile %> | 
+          <a href="#">Messages</a> | 
+          <%# if current_user %>
+          <%# end %>
+          <% if user_signed_in? %> 
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete %> | 
+          <% else %>
+            <a href="/users/sign_up">Sign Up</a> | 
+            <a href="/users/sign_in">Log In</a>
+          <% end %>
       </div>
-    </nav>
+    </section>
+
     <div class="container">
       <%= yield %>
-    <div class="container">
+    </div>
   </body>
 </html>
