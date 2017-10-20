@@ -3,7 +3,7 @@
 <section class="row profile_header">
     <div class="col row profile_info">
         <% if @profile.photo_url(:thumb).present? %>
-            <div class="col profile_photo" style="<%= style_backgound_image(@profile.photo_url(:thumb)) %>">
+            <div class="col profile_photo" style="<%= style_backgound_image(@profile.photo_url(:thumb)) %>"></div>
         <% else %>
             <div class="col profile_photo" style="<%= style_backgound_image(image_url(@profile.image_url)) unless @profile.image_url.nil? %>"></div>
         <% end %>
