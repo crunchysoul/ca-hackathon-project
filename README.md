@@ -1,95 +1,100 @@
-# Coder Academy Hackathon Project: project Flotsy
+# Coder Academy Hackathon Project: Project Flotsy
 
-## What is _Flosty_: 
-* __A social platform, where people are connected with other individauls
-through:__
+## Team Members
+This was a group project between
+- Josh Chen
+- Glenn Dimaliwat
+- Alessio Palumbo
+- John Voon
 
-  1. ___attraction___
-  2. ___common interests___
-  3. ___supply and demand (both material and psychological)___
+## ERD
 
-* __A vitural display of individual, where users can upload and list items into profile, profile is divided into two part:__
-  - ___Owned___: All the tangible/intangible properties owned by user, for
-    exmaple: tangible(clothes, gadgets, cars...), intangible(travel experiences,
-    interesting event, skills, qualifications, and eveything else)
-  - ___Want___: Personal wishlist for everything user wants, tangible like a
-    perticular bikes, that special collectable postage stamp you always want
-    since a child, or intangible: learning a new skills(maybe diving, Spanish,
-    playing bajo), new experience: explore the amazing Australia outback while
-    living the 4wd camper, a relationship... 
+![ERD](/app/assets/images/erd.png "ERD")
+
+## Wireframes
+
+![Wireframes](/app/assets/images/wireframes.png "Wireframes")
+
+## Trello Board with our Initial Ideas, User Stories and Team Workflow
+
+![Trello Board](/app/assets/images/trello-board.png "Trello Board")
+
+## What is _Flotsy_? 
+### __A social platform where people are connected with other individauls through:__
+
+1. ___attraction___
+2. ___diverse and common interests___
+3. ___supply and demand (both material and psychological)___
+
+### __A virtual profile for individuals, where users can upload and list items. Each profile is divided into two parts:__
+- ___Owned___: Possessions owned by a user, including tangible(clothes, gadgets, cars, etc.) and intangible(travel, experiences, interesting events, skills, qualifications, etc.)
+- ___Wants___: Personal wishlist for everything a user wants, including tangible goods (e.g. a
+  particular bike, a special collectible postage stamp you always wanted
+  since a child) and intangible (e.g. learning a new skill like diving, Spanish,
+  playing the banjo or new experience such as exploring the amazing Australian outback while
+  living in a 4WD camper, a relationship, etc.) 
 
 ## Philosophy of _Flotsy_:
-* Life is percisious
-* Individuals are equally respectful
-* Life should not be defined by rules
+* Life is precious
+* Celebrate and respect the uniqueness and value of individuals
+* Life should not be defined by rules and norms
 * Objectify belongings and desire
 * Honesty to self and others.
-* Support each other
+* Mutual support
 * Resources belongs to all
 * Open mind to all
-* Sharing is Caring
+* Sharing is caring
 * Unity
-* >"happiness is only real when shared page"
+* >"Happiness is only real when shared"
 
 ## Why:
-* We believe individual want to be seen as who they really are, and individual
-  has the power of create his image to others.
-* We think the current social media are isolating us with all non-essences.
-* We think social media should help people connecting, growing, and complete
-  each others.
+* We believe individuals want to be seen for who they really are and individuals
+  have the power to create that image to be seen by others.
+* We think the profiles that current social media solutions allow people to create do not capture the essence of individuals but is a platform for them to share status and news updates.
+* We think social media should help people connect, grow, and complement each others' needs and desires.
 
-## User Senario 1:
-* Ann love fashion, she uploads all her clothes, shoes, and accessories, which
-  represent her style, Flotsy is the reflection on her taste.
-* Ann has a skill of picking the most trendy item, and really good at dressing
-  up anyone. Flotsy allow Ann's talent discovered by other people.
-* Ann cares about environment, she want to be more active in volunteering in
-  environmental areas, but do not have the experinces, and little bit shy, she
-  listed this in her _Want_ list, as a personal todo item.
-* Ann always think mathematic is sort of black magic, she haven't been learning
-  any of mathematics since graduation of high school, but she wants to expand
-  her horizon and domian of her knowledge, but not fully commited to a degree or
-  boring online course, what she want is some Mathematic wizard can causally chat with her more about the mathematics, so she put "Wish to learn more about math".
+## User Scenario 1:
+* Ann loves fashion. Flotsy is the reflection on her taste where she uploads her clothes, shoes and accessories matching her style.
+* Ann has a skill of picking the trendiest items and is really good at providing advice for anyone who wants to look their best. Flotsy allows Ann's talent to be discovered by other people.
+* Ann also cares about the environment. She wants to be more active in volunteering in environmental areas, but does not have the experience, and is a little bit shy. She lists this in her _Wants_ list to see if anyone might have a similar interest or experience in this area.
+* Ann always think mathematics is sort of like black magic and has not studied any mathematics since graduation of high school. She wants to expand her horizons and domain of her knowledge, but is not fully committed to a degree or boring online courses. She prefers to have a mathematics wizard who can casually chat with her about mathematics, so she lists "Wishes to learn more about math" as a want.
 
-## User Senario 2:
-  * Tom loves technologis, not only he own all the newest gadgets on the
-    markets, but also has a nice collections of all the game consoles, he really
-    want to let more people to know this, So he list all he's gadgets on the
-    __Owned__.
-  * Tom has a PhD in Mathematics and currently working in Google, he is very
-    pround of himself, so he put this too.
-  * Tom also is a environmental activist, had has been to many Greenpeace and Sea shepherd events, He love those experinces a lot.
-  * Tom on the other hand, always want to upgrade his wardrobe, but do want to
-    hire any professional (not causal enough and slight awkward), So her put
-    "May need help with wardrob"
-  * Everyday Tom meets all people in the same circle, He would love to make some
-    new friends, and he perfer to meet people individually, which make him more
-    comfortable.
+## User Scenario 2:
+  * Tom loves technology. He not only owns all the newest gadgets on the market, but also has a nice collection of all the game consoles. He really wants to let more people to know this, so he list all the gadgets he owns.
+  * Tom has a PhD in Mathematics and is currently working in Google. He is very proud of himself, so he lists his knowledge.
+  * Tom is also an environmental activist and has been to many Greenpeace and Sea shepherd events. He loves these experiences a lot.
+  * Tom, on the other hand, always want to upgrade his wardrobe, but does not want to hire a professional as this might be slightly awkward, so he lists "May need help with wardrobe".
+  * Tom hangs out with the same people on a daily basis and would love to make some new friends. He prefers to meet people individually who have different interests.
 
-## Flotsy provides all the values that both two users are seeking for:
-  * Ann and Tom using _Flotsy_ expressed themself to others, by listing all the
-    things they cares and all the things they are desired. Psychologicaly we
-    satisfying their needs.
-  * Ann and Tom using _Flotsy_ connected to each other by areas they complete
-    each other, first they chat with each other through _Flotsy_'s messaging system, just the scene from "You've got mail"
-  * after a while, they feel comfortable to have a coffee together, then they met each other and had a wonderful chat in a lovely cafe, Ann learnt a lot from Tom in Mathematics, She is now fascinated by the beauty of Mathematics and currently Reading the book of _GEB_ and really love it, btw, the book is alos from another user of _Flotsy_, which is anohter great story for another day.
-  * Tom also told all the interesting facts about Gameboys and how technologies have envolved for the past years, He felt really greate that spread he's love for teachnoloies to others.
-  * Ann heard all the experiences about Environmental activities from Tom, she
-    not only amazed by those stories, but also learnt how to became a activist,
-    from the begin to hard core, she is now more confidence about this, and has
-    new connections in this areas.
-  * Ann helped Tom to restyle his wardrob, now Tom is not only smart but also
-    extremely attractive to intelligences that other than Artifical, Tom is
-    happy because of this, Ann is happy because of the satisfication of making
-    people care about fashion, and She helped others, and She built the image
-    she always want to be seen.
-  * Which is why _Flotsy_ is a greate platform!
+## Flotsy provides all the values that both users are seeking for:
+  * Ann and Tom used _Flotsy_ to express themselves to others by listing things they care about and desire. We are satisfying their needs on a psychological level.
+  * Ann and Tom used _Flotsy_ to connect to each other by areas they complete each other, first they chat with each other through _Flotsy_'s messaging system, just like the scene from "You've got mail"
+  * After a while, they felt comfortable to have a coffee together, then they met each other and had a wonderful chat in a lovely cafe. Ann learnt a lot from Tom about Mathematics. She is now fascinated by the beauty of Mathematics and is currently reading the book of _GEB_ and really loves it. The book is also from another _Flotsy_ user, which is anohter great story for another day.
+  * Tom also told of all the interesting facts about Gameboys and how technologies have evolved for the past years. He feels really greate that spread he's love for teachnoloies to others.
+  * Ann heard all the experiences about environmental activities from Tom, she was not only amazed by those stories, but also learnt how to become a activist. She is now more confident about this, and has made a new connection in this areas.
+  * Ann helped Tom to restyle his wardrobe. Now Tom not only looks smart but is also extremely attractive. Tom is happy because of this. Ann is happy because of the satisfication of making people care about fashion. She helped others and built the image she always want to be seen as.
+  * This is why _Flotsy_ is a greate platform!
 
-## We are not only did this to compete for this Hackathon, or for this course to
-pass certain assessment requirements, but we as team really want to make this
-happen to make more people using our service. 
+## Motivations for the project
 
-## Scale and growth model
-## Future impletmentation
-## Team Introduction:
+We did this not only to pass the assessment requirements but as a team, we really wanted to get others excited about the potential of this idea. 
+
+## Future Plans
+
+- Allowing users to create group accounts to connect with others in the community, e.g. couples, etc.
+- Improve responsiveness for mobile devices
+- Incorporate likes and followers functionality
+- Sort listings by likes
+- Comments
+
+## Challenges
+
+It was a real challenge to scoping our project to an achievable MVP that could be completed within the time constraints. To tackle this, we had to trim down features such as likes and followers and focus on the core features of our application that we wanted to convey in our presentation/pitch.  
+
+We also attempted to divide the work between "back-end" developers and "front-end" developers and had a member of our team develop the front-end separate from the back-end. We therefore struggled with the challenge of syncing up this work and the lack of familiarity with integrating a static front-end with the back-end. This required frequent communication via Slack to make sure we were on the same page as to what others were doing at any given time. 
+
+It also took us a while to implement image uploading and having a fallback. Essentially, we wanted to also be able to seed our database with images quickly instead of uploading images manually. We did this by creating another column in our Profiles and Listings table for the fallback image. We then seeded the database with the image filename, e.g. "badminton-racket.jpg" and used the `image_url` helper method to display the URL to the image.  
+
+Learning to use Git as a team was initially challenging. With the help of frequent communication to see if anyone had recently pushed changes, we were able to implement major features in separate branches and then merge them to the master branch at appropriate times.
+
 
