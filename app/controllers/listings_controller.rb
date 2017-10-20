@@ -6,10 +6,9 @@ class ListingsController < ApplicationController
   def index
     @listings = Listing.all
     if params[:search]
-      @listings = Listing.search(params[:search]).order("created_at DESC")
+      @listings = Listing.search(params[:search]).where.not(user: current_user).order("created_at DESC")
     else
-      # @listings = Listing.all.order("created_at DESC")
-      @listings = Listing.all.order("random()")
+      @listings = Listing.where.not(user: current_user).order("random()")
     end
   end
 
