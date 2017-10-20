@@ -17,8 +17,8 @@ class ProfilesController < ApplicationController
     @no_trade_owned_skills = current_user.listings.where(category_id: 'skills', status: 0, item_type: 'no-trade')
     @trade_owned_products_or_skills = current_user.listings.where(category_id: ['skills', 'products'], status: 0, item_type: 'trade')
     # @trade_wanted_products = current_user.listings.where(category_id: 'skills', status: 1, item_type: 'trade')
-    @trade_wanted_skills = current_user.listings.where(category_id: 'skills', status: 1, item_type: 'trade')
-    @trade_wanted_products = current_user.listings.where(category_id: 'products', status: 1, item_type: 'trade')
+    @trade_wanted_skills = current_user.listings.where(category_id: 'skills', status: 1)
+    @trade_wanted_products = current_user.listings.where(category_id: 'products', status: 1)
 
   end
 

@@ -73,7 +73,7 @@
     <div class="col want">
         <div class="items_block">
         <h3>Things I want</h3>
-        <% @trade_wanted_skills.each do |item| %>
+        <% @trade_wanted_products.each do |item| %>
             <a href="<%= listing_path(item) %>">
                 <div class="row item">
                     <% if item.photo_url(:thumb).present? %>
@@ -90,7 +90,7 @@
     </div>
 
     <div class="items_block">
-    <h3>Skills/Experiences I am looking for</h3>
+    <h3>Skills I want to learn</h3>
         <% @trade_wanted_skills.each do |item| %>
             <a href="<%= listing_path(item) %>">
                 <div class="row item">
@@ -105,24 +105,5 @@
                 </div>
             </a>
         <% end %>
-    </div>
-
-    <div class="items_block">
-    <h3>Things/Skills I need</h3>
-    <% @trade_wanted_products.each do |item| %>
-        <a href="<%= listing_path(item) %>">
-            <div class="row item">
-                <% if item.photo_url(:thumb).present? %>
-                    <div class="col item_photo" style="<%= style_backgound_image(item.photo_url(:thumb)) %>">
-                <% else %>
-                    <div class="col item_photo" style="<%= style_backgound_image(image_url(item.image_url)) unless item.image_url.nil? %>"></div>
-                <% end %>
-                <div class="col item_description">
-                    <h4><%= item.name %></h4>
-                </div>
-            </div>
-        </a>
-        <% end %>
-        </div>
     </div>
 </section>
