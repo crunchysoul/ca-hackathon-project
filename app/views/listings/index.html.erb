@@ -5,7 +5,11 @@
           <% @listings.each do |listing| %>
           <a href=<%= "/listings/#{listing.id}" %>>
             <div class="row item">
-                <div class="col-2 item_photo" style="<%= style_backgound_image(listing.user.profile.photo_url(:thumb)) %>"></div>
+                <% if listing.user.profile.photo_url(:thumb) %>
+                    <div class="col-2 item_photo" style="<%= style_backgound_image(listing.user.profile.photo_url(:thumb)) %>"></div>
+                <% else %>
+                    <div class="col-2 item_photo" style="<%= style_backgound_image(listing.photo_url) %>"></div>                
+                <% end %>
                 <div class="col item_description">
                     <h4><%= listing.name %></h4>
                     <p>

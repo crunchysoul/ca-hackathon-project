@@ -2,7 +2,11 @@
 
 <section class="row profile_header">
     <div class="col row profile_info">
-        <div class="col profile_photo" style="<%= style_backgound_image(@profile.photo_url(:thumb)) unless @profile.nil? %>">
+        <% if @profile.photo_url(:thumb).present? %>
+            <div class="col profile_photo" style="<%= style_backgound_image(@profile.photo_url(:thumb)) unless @profile.nil? %>">
+        <% else %>
+            <div class="col profile_photo" style="background-image: url(<%= image_url(@profile.image_url)%>);"></div>
+        <% end %>
         <!-- <% if @profile.photo_url(:original) %>
             <%= image_tag @profile.photo_url(:original) %>
         <% end %> -->
