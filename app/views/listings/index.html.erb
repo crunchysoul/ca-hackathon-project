@@ -1,5 +1,6 @@
 <section class="row main">
   <div class="col listing">
+<<<<<<< HEAD
       <div class="items_block">
           <h3>Things you may be interested in</h3>
           <% @listings.each do |listing| %>
@@ -21,6 +22,27 @@
           </a>
           <% end %>
       </div>
+=======
+    <div class="items_block">
+      <h3>Things you may be interested in</h3>
+      <% @listings.each do |listing| %>
+        <a href="<%= listing_path(listing) %>">
+          <div class="d-flex flex-wrap item">
+            <div class="p item_photo">
+              <%= image_tag listing.photo_url unless listing.photo.nil? %>
+            </div>
+            <div class="p item_description">
+              <h4><%= listing.name %></h4>
+              <p>
+              <%= listing.description %><br>
+              Posted by <%= listing.user.profile.full_name unless listing.user.profile.nil? %>
+              </p>
+            </div>
+          </div>
+        </a>
+      <% end %>
+    </div>
+>>>>>>> 8ccb29918c1c4c8bbcc3a7a39e7f9be6b10d6d28
 
   </div>
 </section>
@@ -31,21 +53,21 @@
 <!-- <h1>Listings</h1> -->
 
 
-    <%# @listings.each do |listing| %>
-        <%# if photo_url = listing.user.profile.photo_url(:thumb) %>
-          <%#= image_tag photo_url %>
-        <%# end %>
-          <%#= listing.user.profile.first_name %> <%# listing.user.profile.first_name %>
-          <%#= listing.name %>
-          <%#= listing.description %>
-          <%#= listing.price %>
-        <%# if listing.photo_url(:thumb) %>
-          <%#= image_tag listing.photo_url(:thumb) %>
-        <%# end %>
-        <%#= link_to 'Show', listing %>
-        <%#= link_to 'Edit', edit_listing_path(listing) %>
-        <%#= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%# end %>
+<%# @listings.each do |listing| %>
+  <%# if photo_url = listing.user.profile.photo_url(:thumb) %>
+  <%#= image_tag photo_url %>
+  <%# end %>
+  <%#= listing.user.profile.first_name %> <%# listing.user.profile.first_name %>
+  <%#= listing.name %>
+  <%#= listing.description %>
+  <%#= listing.price %>
+  <%# if listing.photo_url(:thumb) %>
+  <%#= image_tag listing.photo_url(:thumb) %>
+  <%# end %>
+  <%#= link_to 'Show', listing %>
+  <%#= link_to 'Edit', edit_listing_path(listing) %>
+  <%#= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%# end %>
 
 
-<%#= link_to 'New Listing', new_listing_path %>
+  <%#= link_to 'New Listing', new_listing_path %>
