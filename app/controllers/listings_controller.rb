@@ -6,10 +6,9 @@ class ListingsController < ApplicationController
   def index
     @listings = Listing.all
     if params[:search]
-      @listings = Listing.search(params[:search]).order("created_at DESC")
+      @listings = Listing.search(params[:search]).where.not(user: current_user).order("created_at DESC")
     else
-      # @listings = Listing.all.order("created_at DESC")
-      @listings = Listing.all.order("random()")
+      @listings = Listing.where.not(user: current_user).order("random()")
     end
   end
 
@@ -77,6 +76,6 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:name, :description, :user_id, :price, :photo, :category_id, :item_type)
+      params.require(:listing).permit(:name, :description, :user_id, :price, :photo, :category_id, :item_type, :status)
     end
 end
