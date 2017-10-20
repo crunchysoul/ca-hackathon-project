@@ -13,12 +13,11 @@ class ProfilesController < ApplicationController
   def show
     redirect_to edit_profile_url if @profile.nil?
 
-    @no_trade_owned_products = Listing.where(user_id: current_user, category_id: 'products', status: 0, item_type: 'no-trade')
-    @no_trade_owned_skills = current_user.listings.where(category_id: 'skills', status: 0, item_type: 'no-trade')
-    @trade_owned_products_or_skills = current_user.listings.where(category_id: ['skills', 'products'], status: 0, item_type: 'trade')
-    # @trade_wanted_products = current_user.listings.where(category_id: 'skills', status: 1, item_type: 'trade')
-    @trade_wanted_skills = current_user.listings.where(category_id: 'skills', status: 1)
-    @trade_wanted_products = current_user.listings.where(category_id: 'products', status: 1)
+    @no_trade_owned_products = @profile.user.listings.where(category_id: 'products', status: 0, item_type: 'no-trade')
+    @no_trade_owned_skills = @profile.user.listings.where(category_id: 'skills', status: 0, item_type: 'no-trade')
+    @trade_owned_products_or_skills = @profile.user.listings.where(category_id: ['skills', 'products'], status: 0, item_type: 'trade')
+    @trade_wanted_skills = @profile.user.listings.where(category_id: 'skills', status: 1)
+    @trade_wanted_products = @profile.user.listings.where(category_id: 'products', status: 1)
 
   end
 

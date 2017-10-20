@@ -38,7 +38,7 @@
 
   <div class="form-group">
     <%= form.label "Is this an item you own or want to have?" %>
-    <%= form.select :status, [1, 0], id: :listing_status, class: "form-control" %>
+    <%= form.select :status, ['owned', 'wanted'], id: :listing_status, class: "form-control" %>
   </div>
 
   <div class="form-group">
