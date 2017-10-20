@@ -37,7 +37,7 @@ Listing.create!(name: 'Organic coffee cup', description: 'For my trips to 7/11',
 Listing.create!(name: 'Soccer', description: 'Otherwise I can only play badmington!', user: user3, category_id: 'skills', status: 1, image_url: 'soccer.jpg')
 Listing.create!(name: 'Soccer ball', description: 'So I can practice my new acquired skill!', user: user3, category_id: 'products', status: 1, image_url: 'ball.jpg')
 Listing.create!(name: 'Acting', description: 'Really need it for public speaking!', user: user4, category_id: 'skills', status: 1, image_url: 'acting.jpg')
-Listing.create!(name: 'Mac', description: 'Just if it\s really cheap, \'cause it\'s not worth it!', user: user4, price: 200, category_id: 'products', status: 1, image_url: 'mac.jpg')
+Listing.create!(name: 'Mac', description: 'Just if it\'s really cheap, \'cause it\'s not worth it!', user: user4, price: 200, category_id: 'products', status: 1, image_url: 'mac.jpg')
 
 conversation1 = Conversation.create!
 conversation2 = Conversation.create!
