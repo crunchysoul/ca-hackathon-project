@@ -8,6 +8,7 @@ class CreateListings < ActiveRecord::Migration[5.1]
       t.text :photo_data
       t.string :category_id
       t.string :item_type
+      t.string :status
 
       t.timestamps
     end

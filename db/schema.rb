@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(version: 20171020001840) do
     t.text "photo_data"
     t.string "category_id"
     t.string "item_type"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "status"
     t.string "image_url"
     t.index ["user_id"], name: "index_listings_on_user_id"
   end
