@@ -1,13 +1,18 @@
 <section class="row main">
-  <div class="search" style="z-index: 10;">
-    <%= form_tag(@listing, method: "get") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-      <%= submit_tag "Search" %>
-    <% end %>
+  <div class="col search-listing">
+    <div class="search" style="z-index: 10;">
+      <%= form_tag(@listing, method: "get") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "What are you looking for?" %>
+        <%= submit_tag "Search" %>
+      <% end %>
+    </div>
   </div>
+</section>
+
+<section class="row main">
   <div class="col listing">
       <div class="items_block">
-          <% if @listings %>
+          <% if @listings.count>0 %>
             <h3>Things you may be interested in</h3>
               <% @listings.each do |listing| %>
               <a href="<%= listing_path(listing) %>">
@@ -28,7 +33,11 @@
               </a>
               <% end %>
           <% else %>
-            <h4>There are no listigs containing the term <%= params[:search] %>.</h4>
+            <% if !params[:search].nil? %>
+              <h4>There are no listings containing the keyword <%= params[:search] %>.</h4>
+            <% else %>
+              <h4>There are currently no listings</h4>
+            <% end %>
           <% end %>
       </div>
 

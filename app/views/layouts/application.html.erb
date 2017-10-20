@@ -16,7 +16,7 @@
     <% unless controller_name == "landing" %>
     <section class="row header">
       <div class="col header_title">
-          <a href="/"><h1>Flotsy</h1></a>
+          <a href="<%= listings_path %>"><h1>Flotsy</h1></a>
       </div>
       <div class="col-4 navigation">
           <% if user_signed_in? %> 

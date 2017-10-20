@@ -48,6 +48,15 @@ section.header {
 }
 
 /*
+*   Devise
+*/
+div.container {
+  h2:first-of-type {
+    margin-top: 15px;
+  }
+}
+
+/*
 *   Show Profile Page
 */
 section.profile_header {
@@ -224,6 +233,17 @@ section.header {
   }
 }
 
+section.main {
+  div.search-listing {
+    margin-top: 15px;
+    margin-left: 35px;
+    margin-right: 35px;
+    text-align: center;
+    input[type=text] {
+      width: 50%;
+    }
+  }
+}
 section.main {
   div.listing {
     div.item {
