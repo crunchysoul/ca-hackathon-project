@@ -8,15 +8,36 @@ profile1 = Profile.create!(first_name: 'Josh', last_name: 'Chen', date_of_birth:
 profile1 = Profile.create!(first_name: 'John', last_name: 'Voon', date_of_birth: Date.parse('07/9/2089'), city:'Hong Kong City', country: 'Hong Kong', contact_number: '+610412345678', bio: 'He is the start behind any cult action movie in Hong Kong, martial artist and able to give speeches at multiple meetups while beating Chuck Norris up at the same time', user: user3, image_url: "john.jpg")
 profile1 = Profile.create!(first_name: 'Alessio', last_name: 'Palumbo', date_of_birth: Date.parse('05/9/2084'), city:'Trieste', country: 'Italy', contact_number: '+610412345678', bio: 'The mafia is scared of him, if you owe him you\'ll be damned! Yes, I am talking about you Nisal!', user: user4, image_url: "alessio.jpg")
 
-listing1 = Listing.create!(name: 'Charm', description: 'A skill you are born with', user: user1, category_id: 'skills', item_type: 'no_trade')
-listing2 = Listing.create!(name: 'T-shirt', description: 'Very valuable: \'cause I worn it!!!', user: user1, price: 100, category_id: 'products', item_type: 'trade')
-listing3 = Listing.create!(name: 'Mandarin', description: 'Native but not willing to share!', user: user2, category_id: 'skills', item_type: 'no-trade')
-listing4 = Listing.create!(name: 'Post-it', description: 'My private collection of used post-it!', user: user2, price: 50, category_id: 'products', item_type: 'trade')
-listing5 = Listing.create!(name: 'Public speaking', description: 'I can prepare 2 speeches for 2 different events in 2 weeks!', user: user3, category_id: 'skills', item_type: 'no-trade')
-listing6 = Listing.create!(name: 'Badminton Racquet', description: 'A pair of racquet I used to play a lot with before I started to code', user: user3, price: 120, category_id: 'products', item_type: 'trade')
-listing7 = Listing.create!(name: 'Cooking', description: 'An art for many but few good ones', user: user4, category_id: 'skills', item_type: 'no-trade')
-listing8 = Listing.create!(name: 'Lg g3', description: 'Awesome battery, never turn off suddenly. That\'s why I sell it!', user: user4, price: 200, category_id: 'products', item_type: 'trade')
+Listing.create!(name: 'Ol Jeans', description: 'Dirty pair of jeans', user: user1, category_id: 'products', item_type: 'no-trade', status: 0, image_url: 'jeans.jpg')
+Listing.create!(name: 'Charm', description: 'A skill you are born with', user: user1, category_id: 'skills', item_type: 'no-trade', status: 0, image_url: 'charm.jpg')
+Listing.create!(name: 'T-shirt', description: 'Very valuable: \'cause I worn it!!!', user: user1, price: 100, category_id: 'products', item_type: 'trade', status: 0, image_url: 't-shirt.jpg')
+Listing.create!(name: 'Dancing', description: 'If you want to get the chicks!', user: user1, category_id: 'skills', item_type: 'trade', status: 0, image_url: 'dancing.jpg')
 
+Listing.create!(name: 'Mandarin', description: 'Native but not willing to share!', user: user2, category_id: 'skills', item_type: 'no-trade', status: 0, image_url: 'mandarin.jpg')
+Listing.create!(name: 'Post-it', description: 'My private collection of used post-it!', user: user2, price: 50, category_id: 'products', item_type: 'trade', status: 0, image_url: 'post-it.jpg')
+Listing.create!(name: 'Emacs', description: 'So much better than Vim!', user: user2, category_id: 'skills', item_type: 'trade', status: 0, image_url: 'emacs.png')
+Listing.create!(name: 'Mouse', description: 'Useless!', user: user2, category_id: 'products', item_type: 'trade', status: 0, image_url: 'mouse.jpg')
+
+
+Listing.create!(name: 'Public speaking', description: 'I can prepare 2 speeches for 2 different events in 2 weeks!', user: user3, category_id: 'skills', item_type: 'no-trade', status: 0, image_url: 'public-speaking.jpg')
+Listing.create!(name: 'Badminton Racquet', description: 'A pair of racquet I used to play a lot with before I started to code', user: user3, price: 120, category_id: 'products', item_type: 'trade', status: 0, image_url: 'badminton-racket.jpg')
+Listing.create!(name: 'Typing', description: 'Faster than Nisal!', user: user3, category_id: 'skills', item_type: 'trade', status: 0, image_url: 'typing.jpg')
+Listing.create!(name: 'Bike', description: 'Time to start taking the tram!', user: user3, price: 120, category_id: 'products', item_type: 'trade', status: 0, image_url: 'bike.jpg')
+
+
+Listing.create!(name: 'Cooking', description: 'An art for many but few good ones', user: user4, category_id: 'skills', item_type: 'no-trade', status: 0, image_url: 'cooking.jpg')
+Listing.create!(name: 'Lg g3', description: 'Awesome battery, never turn off suddenly. That\'s why I sell it!', user: user4, price: 200, category_id: 'products', item_type: 'trade', status: 0, image_url: 'lg-g3.jpg')
+Listing.create!(name: 'Babysit', description: 'Mary Poppins with a wooden spoon!', user: user4, category_id: 'skills', item_type: 'trade', status: 0, image_url: 'babysitter.jpg')
+Listing.create!(name: 'Japanese Knife', description: 'Sharp as always!', user: user4, price: 200, category_id: 'products', item_type: 'trade', status: 0, image_url: 'japanese-knife.jpg')
+
+listing9 = Listing.create!(name: 'Charm', description: 'A skill you are born with', user: user1, category_id: 'skills', item_type: 'no_trade', status: 1, image_url: 'charm.jpg')
+listing10 = Listing.create!(name: 'T-shirt', description: 'Very valuable: \'cause I worn it!!!', user: user1, price: 100, category_id: 'products', item_type: 'trade', status: 1, image_url: 't-shirt.jpg')
+listing11 = Listing.create!(name: 'Mandarin', description: 'Native but not willing to share!', user: user2, category_id: 'skills', item_type: 'no-trade', status: 1, image_url: 'mandarin.jpg')
+listing12 = Listing.create!(name: 'Post-it', description: 'My private collection of used post-it!', user: user2, price: 50, category_id: 'products', item_type: 'trade', status: 1, image_url: 'post-it.jpg')
+listing13 = Listing.create!(name: 'Public speaking', description: 'I can prepare 2 speeches for 2 different events in 2 weeks!', user: user3, category_id: 'skills', item_type: 'no-trade', status: 1, image_url: 'public-speaking.jpg')
+listing14 = Listing.create!(name: 'Badminton Racquet', description: 'A pair of racquet I used to play a lot with before I started to code', user: user3, price: 120, category_id: 'products', item_type: 'trade', status: 1, image_url: 'badminton-racket.jpg')
+listing15 = Listing.create!(name: 'Cooking', description: 'An art for many but few good ones', user: user4, category_id: 'skills', item_type: 'no-trade', status: 1, image_url: 'cooking.jpg')
+listing16 = Listing.create!(name: 'Lg g3', description: 'Awesome battery, never turn off suddenly. That\'s why I sell it!', user: user4, price: 200, category_id: 'products', item_type: 'trade', status: 1, image_url: 'lg-g3.jpg')
 
 conversation1 = Conversation.create!
 conversation2 = Conversation.create!
