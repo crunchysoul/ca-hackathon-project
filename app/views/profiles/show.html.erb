@@ -5,7 +5,7 @@
         <% if @profile.photo_url(:thumb).present? %>
             <div class="col profile_photo" style="<%= style_backgound_image(@profile.photo_url(:thumb)) %>">
         <% else %>
-            <div class="col profile_photo" style="<%= style_backgound_image(image_url(@profile.image_url)) %>"></div>
+            <div class="col profile_photo" style="<%= style_backgound_image(image_url(@profile.image_url)) unless @profile.image_url.nil? %>"></div>
         <% end %>
         <div class="col profile_name">
             <h1><%= "#{@profile.full_name}" %></h1>
@@ -23,7 +23,7 @@
                     <% if item.photo_url(:thumb).present? %>
                         <div class="col item_photo" style="<%= style_backgound_image(item.photo_url(:thumb)) %>">
                     <% else %>
-                        <div class="col item_photo" style="<%= style_backgound_image(image_url(item.image_url)) %>"></div>
+                        <div class="col item_photo" style="<%= style_backgound_image(image_url(item.image_url)) unless item.image_url.nil? %>"></div>
                     <% end %>
                     <div class="col item_description">
                         <h4><%= item.name %></h4>
@@ -41,7 +41,7 @@
                     <% if item.photo_url(:thumb).present? %>
                         <div class="col item_photo" style="<%= style_backgound_image(item.photo_url(:thumb)) %>">
                     <% else %>
-                        <div class="col item_photo" style="<%= style_backgound_image(image_url(item.image_url)) %>"></div>
+                        <div class="col item_photo" style="<%= style_backgound_image(image_url(item.image_url)) unless item.image_url.nil? %>"></div>
                     <% end %>
                     <div class="col item_description">
                         <h4><%= item.name %></h4>
@@ -59,7 +59,7 @@
                     <% if item.photo_url(:thumb).present? %>
                         <div class="col item_photo" style="<%= style_backgound_image(item.photo_url(:thumb)) %>">
                     <% else %>
-                        <div class="col item_photo" style="<%= style_backgound_image(image_url(item.image_url)) %>"></div>
+                        <div class="col item_photo" style="<%= style_backgound_image(image_url(item.image_url)) unless item.image_url.nil? %>"></div>
                     <% end %>
                     <div class="col item_description">
                         <h4><%= item.name %></h4>
@@ -79,7 +79,7 @@
                     <% if item.photo_url(:thumb).present? %>
                         <div class="col item_photo" style="<%= style_backgound_image(item.photo_url(:thumb)) %>">
                     <% else %>
-                        <div class="col item_photo" style="<%= style_backgound_image(image_url(item.image_url)) %>"></div>
+                        <div class="col item_photo" style="<%= style_backgound_image(image_url(item.image_url)) unless item.image_url.nil? %>"></div>
                     <% end %>
                     <div class="col item_description">
                         <h4><%= item.name%></h4>
@@ -97,7 +97,7 @@
                     <% if item.photo_url(:thumb).present? %>
                         <div class="col item_photo" style="<%= style_backgound_image(item.photo_url(:thumb)) %>">
                     <% else %>
-                        <div class="col item_photo" style="<%= style_backgound_image(image_url(item.image_url)) %>"></div>
+                        <div class="col item_photo" style="<%= style_backgound_image(image_url(item.image_url)) unless item.image_url.nil? %>"></div>
                     <% end %>
                     <div class="col item_description">
                         <h4><%= item.name%></h4>
@@ -115,7 +115,7 @@
                 <% if item.photo_url(:thumb).present? %>
                     <div class="col item_photo" style="<%= style_backgound_image(item.photo_url(:thumb)) %>">
                 <% else %>
-                    <div class="col item_photo" style="<%= style_backgound_image(image_url(item.image_url)) %>"></div>
+                    <div class="col item_photo" style="<%= style_backgound_image(image_url(item.image_url)) unless item.image_url.nil? %>"></div>
                 <% end %>
                 <div class="col item_description">
                     <h4><%= item.name %></h4>
