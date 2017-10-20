@@ -22,6 +22,7 @@ class Listing < ApplicationRecord
   enum status: { owned: 0, wanted: 1 }
 
   def self.search(search)
-    where("name LIKE ? OR description LIKE ? OR category_id LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+    keyword = search.downcase
+    where("lower(name) LIKE ? OR lower(description) LIKE ? OR lower(category_id) LIKE ?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%")
   end
 end

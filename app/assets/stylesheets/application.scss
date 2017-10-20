@@ -225,6 +225,17 @@ section.header {
 }
 
 section.main {
+  div.search-listing {
+    margin-top: 15px;
+    margin-left: 35px;
+    margin-right: 35px;
+    
+    input[type=text] {
+      width: 50%;
+    }
+  }
+}
+section.main {
   div.listing {
     div.item {
       margin-top: 15px;

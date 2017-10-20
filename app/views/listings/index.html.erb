@@ -1,10 +1,15 @@
 <section class="row main">
-  <div class="search" style="z-index: 10;">
-    <%= form_tag(@listing, method: "get") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-      <%= submit_tag "Search" %>
-    <% end %>
+  <div class="col search-listing">
+    <div class="search" style="z-index: 10;">
+      <%= form_tag(@listing, method: "get") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "What are you looking for?" %>
+        <%= submit_tag "Search" %>
+      <% end %>
+    </div>
   </div>
+</section>
+
+<section class="row main">
   <div class="col listing">
       <div class="items_block">
           <% if @listings %>
