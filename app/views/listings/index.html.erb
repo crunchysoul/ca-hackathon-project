@@ -33,7 +33,11 @@
               </a>
               <% end %>
           <% else %>
-            <h4>There are no listings containing the term <%= params[:search] %>.</h4>
+            <% if !params[:search].nil? %>
+              <h4>There are no listings containing the keyword <%= params[:search] %>.</h4>
+            <% else %>
+              <h4>There are currently no listings</h4>
+            <% end %>
           <% end %>
       </div>
 
