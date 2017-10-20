@@ -7,7 +7,9 @@
 <section class="buttons-landing">
     <div class="button-group-landing">
         <%= link_to button_tag("Get Started"), listings_path %>
-        <%= link_to button_tag("Sign in"), new_user_session_path %>
-        <%= link_to button_tag("Sign up"), new_user_registration_path %>
+        <% if !user_signed_in? %>
+            <%= link_to button_tag("Sign in"), new_user_session_path %>
+            <%= link_to button_tag("Sign up"), new_user_registration_path %>
+        <% end %>
     </div>
 </section>
