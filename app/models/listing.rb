@@ -20,4 +20,8 @@ class Listing < ApplicationRecord
 
   belongs_to :user
   enum status: { owned: 0, wanted: 1 }
+
+  def self.search(search)
+    where("name LIKE ? OR description LIKE ? OR category_id LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+  end
 end

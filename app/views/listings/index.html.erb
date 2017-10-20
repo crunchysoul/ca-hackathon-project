@@ -1,48 +1,36 @@
 <section class="row main">
+  <div class="search" style="z-index: 10;">
+    <%= form_tag(@listing, method: "get") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+      <%= submit_tag "Search" %>
+    <% end %>
+  </div>
   <div class="col listing">
-<<<<<<< HEAD
       <div class="items_block">
-          <h3>Things you may be interested in</h3>
-          <% @listings.each do |listing| %>
-          <a href="<%= listing_path(listing) %>">
-            <div class="d-flex flex-wrap item">
-                <% if listing.user.profile.photo_url(:thumb) %>
-                    <div class="p item_photo" style="<%= style_backgound_image(listing.user.profile.photo_url(:thumb)) %>"></div>
-                <% else %>
-                    <div class="p item_photo" style="background-image: url(<%= image_url(listing.image_url)%>);"></div>                
-                <% end %>
-                <div class="p item_description">
-                    <h4><%= listing.name %></h4>
-                    <p>
-                    <%= listing.description %><br>
-                    Posted by <%= listing.user.profile.full_name unless listing.user.profile.nil? %>
-                    </p>
+          <% if @listings %>
+            <h3>Things you may be interested in</h3>
+              <% @listings.each do |listing| %>
+              <a href="<%= listing_path(listing) %>">
+                <div class="d-flex flex-wrap item">
+                    <% if listing.user.profile.photo_url(:thumb) %>
+                        <div class="p item_photo" style="<%= style_backgound_image(listing.user.profile.photo_url(:thumb)) %>"></div>
+                    <% else %>
+                        <div class="p item_photo" style="background-image: url(<%= image_url(listing.image_url)%>);"></div>                
+                    <% end %>
+                    <div class="p item_description">
+                        <h4><%= listing.name %></h4>
+                        <p>
+                        <%= listing.description %><br>
+                        Posted by <%= listing.user.profile.full_name unless listing.user.profile.nil? %>
+                        </p>
+                    </div>
                 </div>
-            </div>
-          </a>
+              </a>
+              <% end %>
+          <% else %>
+            <h4>There are no listigs containing the term <%= params[:search] %>.</h4>
           <% end %>
       </div>
-=======
-    <div class="items_block">
-      <h3>Things you may be interested in</h3>
-      <% @listings.each do |listing| %>
-        <a href="<%= listing_path(listing) %>">
-          <div class="d-flex flex-wrap item">
-            <div class="p item_photo">
-              <%= image_tag listing.photo_url unless listing.photo.nil? %>
-            </div>
-            <div class="p item_description">
-              <h4><%= listing.name %></h4>
-              <p>
-              <%= listing.description %><br>
-              Posted by <%= listing.user.profile.full_name unless listing.user.profile.nil? %>
-              </p>
-            </div>
-          </div>
-        </a>
-      <% end %>
-    </div>
->>>>>>> 8ccb29918c1c4c8bbcc3a7a39e7f9be6b10d6d28
 
   </div>
 </section>
