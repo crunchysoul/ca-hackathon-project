@@ -8,7 +8,8 @@ class ListingsController < ApplicationController
     if params[:search]
       @listings = Listing.search(params[:search]).order("created_at DESC")
     else
-      @listings = Listing.all.order("created_at DESC")
+      # @listings = Listing.all.order("created_at DESC")
+      @listings = Listing.all.order("random()")
     end
   end
 
