@@ -18,9 +18,14 @@
                     <%= f.button "Message #{@listing.user.profile.first_name}"  %>
                     <%#= button_tag("Message #{@listing.user.profile.first_name}"), type: 'submit' %>
                   <% end %>
+                  <%= link_to button_tag("View #{@listing.user.profile.first_name}'s Profile"), profile_path(@listing.user.profile) %>
+
+                <% elsif user_signed_in? and @listing.user == current_user %>
+                    <%= link_to button_tag("Edit"), edit_listing_path(@listing) %>
+                    <%= link_to button_tag("Delete"), @listing, method: :delete, data: { confirm: 'Are you sure?' } %>
                 <% end %>
 
-                <%= link_to button_tag("View #{@listing.user.profile.first_name}'s Profile"), profile_path(@listing.user.profile) %>
+                
                 <%= link_to button_tag("Close"), listings_path %>
             </div>
         </div>
