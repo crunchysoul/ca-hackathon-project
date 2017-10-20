@@ -1,24 +1,36 @@
 <section class="row main">
+  <div class="search" style="z-index: 10;">
+    <%= form_tag(@listing, method: "get") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+      <%= submit_tag "Search" %>
+    <% end %>
+  </div>
   <div class="col listing">
-    <div class="items_block">
-      <h3>Things you may be interested in</h3>
-      <% @listings.each do |listing| %>
-        <a href="<%= listing_path(listing) %>">
-          <div class="d-flex flex-wrap item">
-            <div class="p item_photo">
-              <%= image_tag listing.photo_url unless listing.photo.nil? %>
-            </div>
-            <div class="p item_description">
-              <h4><%= listing.name %></h4>
-              <p>
-              <%= listing.description %><br>
-              Posted by <%= listing.user.profile.full_name unless listing.user.profile.nil? %>
-              </p>
-            </div>
-          </div>
-        </a>
-      <% end %>
-    </div>
+      <div class="items_block">
+          <% if @listings %>
+            <h3>Things you may be interested in</h3>
+              <% @listings.each do |listing| %>
+              <a href="<%= listing_path(listing) %>">
+                <div class="d-flex flex-wrap item">
+                    <% if listing.photo_url(:thumb).present? %>
+                      <div class="p item_photo" style="<%= style_backgound_image(listing.photo_url(:thumb)) %>">
+                    <% else %>
+                      <div class="p item_photo" style="<%= style_backgound_image(image_url(listing.image_url)) unless listing.image_url.nil? %>"></div>
+                    <% end %>
+                    <div class="p item_description">
+                        <h4><%= listing.name %></h4>
+                        <p>
+                        <%= listing.description %><br>
+                        Posted by <%= listing.user.profile.full_name unless listing.user.profile.nil? %>
+                        </p>
+                    </div>
+                </div>
+              </a>
+              <% end %>
+          <% else %>
+            <h4>There are no listigs containing the term <%= params[:search] %>.</h4>
+          <% end %>
+      </div>
 
   </div>
 </section>

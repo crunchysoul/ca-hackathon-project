@@ -1,8 +1,10 @@
 <section class="row main">
     <div class="col d-flex flex-wrap show_item">
-        <div class="p-2 item_image">
-            
-        </div>
+        <% if @listing.photo_url(:original) %>
+            <div class="p-2 item_image" style="<%= style_backgound_image(@listing.photo_url(:original)) %>"></div>
+        <% else %>
+            <div class="p-2 item_image" style="background-image: url(<%= image_url(@listing.image_url) unless @listing.image_url.nil? %>);"></div>
+        <% end %>
         <div class="p-2 item_info">
             <h4><%= @listing.name %></h4>
             <p>
@@ -10,10 +12,12 @@
             </p>
             <div class="show_item_button_group">
                 <!-- <button>Message <%#= @listing.user.profile.first_name %></button> -->
-                <%= form_with model: @conversation, local: true do |f| %>
-                  <%= f.hidden_field :user_id, value: @listing.user.id %>
-                  <%= f.button "Message #{@listing.user.profile.first_name}"  %>
-                  <%#= button_tag("Message #{@listing.user.profile.first_name}"), type: 'submit' %>
+                <% if user_signed_in? and @listing.user != current_user %>
+                  <%= form_with model: @conversation, local: true do |f| %>
+                    <%= f.hidden_field :user_id, value: @listing.user.id %>
+                    <%= f.button "Message #{@listing.user.profile.first_name}"  %>
+                    <%#= button_tag("Message #{@listing.user.profile.first_name}"), type: 'submit' %>
+                  <% end %>
                 <% end %>
 
                 <%= link_to button_tag("View #{@listing.user.profile.first_name}'s Profile"), profile_path(@listing.user.profile) %>
