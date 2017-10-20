@@ -13,6 +13,7 @@
   </head>
 
   <body>
+    <% unless controller_name == "landing" %>
     <section class="row header">
       <div class="col header_title">
           <a href="/"><h1>Flotsy</h1></a>
@@ -28,9 +29,14 @@
           <% end %>
       </div>
     </section>
+    <% end %>
 
+    <% unless controller_name == "landing" %>
     <div class="container">
       <%= yield %>
     </div>
+    <% else %>
+      <%= yield %>
+    <% end %>
   </body>
 </html>

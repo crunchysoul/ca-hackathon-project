@@ -23,7 +23,7 @@ class ConversationsController < ApplicationController
     else
       @conversation = Conversation.new
       current_user_participation = @conversation.participations.build(user: current_user)
-      other_participation = @conversation.participations.build(user: User.find_by(conversation_params[:user_id]))
+      other_participation = @conversation.participations.build(user: User.find(conversation_params[:user_id]))
 
       respond_to do |format|
         if @conversation.save && current_user_participation.save && other_participation.save
