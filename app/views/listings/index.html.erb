@@ -3,18 +3,18 @@
       <div class="items_block">
           <h3>Things you may be interested in</h3>
           <% @listings.each do |listing| %>
-          <a href=<%= "/listings/#{listing.id}" %>>
-            <div class="row item">
+          <a href="<%= listing_path(listing) %>">
+            <div class="d-flex flex-wrap item">
                 <% if listing.user.profile.photo_url(:thumb) %>
-                    <div class="col-2 item_photo" style="<%= style_backgound_image(listing.user.profile.photo_url(:thumb)) %>"></div>
+                    <div class="p item_photo" style="<%= style_backgound_image(listing.user.profile.photo_url(:thumb)) %>"></div>
                 <% else %>
-                    <div class="col-2 item_photo" style="<%= style_backgound_image(listing.photo_url) %>"></div>                
+                    <div class="p item_photo" style="<%= style_backgound_image(listing.photo_url) %>"></div>                
                 <% end %>
-                <div class="col item_description">
+                <div class="p item_description">
                     <h4><%= listing.name %></h4>
                     <p>
-                        <%= listing.description %><br>
-                        Posted by <%= listing.user.profile.first_name %> <% listing.user.profile.first_name %>
+                    <%= listing.description %><br>
+                    Posted by <%= listing.user.profile.full_name unless listing.user.profile.nil? %>
                     </p>
                 </div>
             </div>

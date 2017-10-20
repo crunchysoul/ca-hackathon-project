@@ -1,21 +1,28 @@
-<p id="notice"><%= notice %></p>
-
 <section class="row main">
-  <div class="col d-flex flex-wrap show_item">
-    <div class="p-2 item_image">
-      <div class="col-2 item_photo" style="<%= style_backgound_image(@listing.user.profile.photo_url(:thumb)) %>"></div>
-    </div>
-    <div class="p-2 item_info">
-        <h4><%= @listing.name %></h4>
-        <p><%= @listing.description %></p>
-        
-        <div class="show_item_button_group">
-            <%= form_with model: @conversation, local: true do |f| %>
-              <%= f.hidden_field :user_id, value: @listing.user.id %>
-              <%= f.button "Message #{@listing.user.profile.first_name}", class: "btn btn-primary" %>
-            <% end %>
-            <%= link_to "View #{@listing.user.profile.first_name}'s Profile", profile_path(@listing.user.profile.id), class: "btn btn-primary" %>
+    <div class="col d-flex flex-wrap show_item">
+        <div class="p-2 item_image">
+            
         </div>
+        <div class="p-2 item_info">
+            <h4><%= @listing.name %></h4>
+            <p>
+                <%= @listing.description %>
+            </p>
+            <div class="show_item_button_group">
+                <!-- <button>Message <%#= @listing.user.profile.first_name %></button> -->
+                <%= form_with model: @conversation, local: true do |f| %>
+                  <%= f.hidden_field :user_id, value: @listing.user.id %>
+                  <%= f.button "Message #{@listing.user.profile.first_name}"  %>
+                  <%#= button_tag("Message #{@listing.user.profile.first_name}"), type: 'submit' %>
+                <% end %>
+
+                <%= link_to button_tag("View #{@listing.user.profile.first_name}'s Profile"), profile_path(@listing.user.profile) %>
+                <%= link_to button_tag("Close"), listings_path %>
+            </div>
+        </div>
+
     </div>
-  </div>
 </section>
+
+<%#= link_to 'Edit', edit_listing_path(@listing) %>
+<%#= link_to 'Back', listings_path %>

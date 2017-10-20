@@ -15,142 +15,122 @@
             <h1><%= "#{@profile.full_name}" %></h1>
         </div>
     </div>
+  </div>
 </section>
 
-<section class="row main">
+<% if false %>
+  <section class="row main">
     <div class="col have">
         <div class="items_block">
             <h3>Things I own</h3>
-            <div class="row item">
-                <div class="col-2 item_photo"></div>
-                <div class="col item_description">
-                    <h4>Item</h4>
+            <% @no_trade_owned_products.each do |item| %>
+                <div class="row item">
+                    <div class="col-2 item_photo"></div>
+                    <div class="col item_description">
+                        <h4><%= item.name %></h4>
+                    </div>
                 </div>
-            </div>
-            <div class="row item">
-                <div class="col-2 item_photo"></div>
-                <div class="col item_description">
-                    <h4>Item</h4>
-                </div>
-            </div>
-            <div class="row item">
-                <div class="col-2 item_photo"></div>
-                <div class="col item_description">
-                    <h4>Item</h4>
-                </div>
-            </div>
+            <% end %>
         </div>
+      </div>
 
         <div class="items_block">
             <h3>Skills/Experiences I am good at</h3>
-            <div class="row item">
-                <div class="col-2 item_photo"></div>
-                <div class="col item_description">
-                    <h4>Item</h4>
+            <% @no_trade_owned_skills.each do |item| %>
+                <div class="row item">
+                    <div class="col-2 item_photo"></div>
+                    <div class="col item_description">
+                        <h4><%= item.name %></h4>
+                    </div>
                 </div>
-            </div>
-            <div class="row item">
-                <div class="col-2 item_photo"></div>
-                <div class="col item_description">
-                    <h4>Item</h4>
-                </div>
-            </div>
-            <div class="row item">
-                <div class="col-2 item_photo"></div>
-                <div class="col item_description">
-                    <h4>Item</h4>
-                </div>
-            </div>
+            <% end %>
         </div>
+        <div class="row item">
+          <div class="col-2 item_photo"></div>
+          <div class="col item_description">
+            <h4>Item</h4>
+          </div>
+        </div>
+        <div class="row item">
+          <div class="col-2 item_photo"></div>
+          <div class="col item_description">
+            <h4>Item</h4>
+          </div>
+        </div>
+      </div>
 
         <div class="items_block">
             <h3>Things/Skills I can provide</h3>
-            <div class="row item">
-                <div class="col-2 item_photo"></div>
-                <div class="col item_description">
-                    <h4>Item</h4>
+            <% @trade_owned_products_or_skills.each do |item| %>
+                <div class="row item">
+                    <div class="col-2 item_photo"></div>
+                    <div class="col item_description">
+                        <h4><%= item.name %></h4>
+                    </div>
                 </div>
-            </div>
-            <div class="row item">
-                <div class="col-2 item_photo"></div>
-                <div class="col item_description">
-                    <h4>Item</h4>
-                </div>
-            </div>
-            <div class="row item">
-                <div class="col-2 item_photo"></div>
-                <div class="col item_description">
-                    <h4>Item</h4>
-                </div>
-            </div>
+            <% end %>
         </div>
+      </div>
     </div>
+
     <div class="col want">
         <div class="items_block">
             <h3>Things I want</h3>
-            <div class="row item">
-                <div class="col-2 item_photo"></div>
-                <div class="col item_description">
-                    <h4>Item</h4>
+            <% @trade_wanted_skills.each do |item| %>
+                <div class="row item">
+                    <div class="col-2 item_photo"></div>
+                    <div class="col item_description">
+                        <h4><%= item.name%></h4>
+                    </div>
                 </div>
-            </div>
-            <div class="row item">
-                <div class="col-2 item_photo"></div>
-                <div class="col item_description">
-                    <h4>Item</h4>
-                </div>
-            </div>
-            <div class="row item">
-                <div class="col-2 item_photo"></div>
-                <div class="col item_description">
-                    <h4>Item</h4>
-                </div>
-            </div>
+            <% end %>
         </div>
+        <div class="row item">
+          <div class="col-2 item_photo"></div>
+          <div class="col item_description">
+            <h4>Item</h4>
+          </div>
+        </div>
+      </div>
 
         <div class="items_block">
             <h3>Skills/Experiences I am looking for</h3>
-            <div class="row item">
-                <div class="col-2 item_photo"></div>
-                <div class="col item_description">
-                    <h4>Item</h4>
+            <% @trade_wanted_skills.each do |item| %>
+                <div class="row item">
+                    <div class="col-2 item_photo"></div>
+                    <div class="col item_description">
+                        <h4><%= item.name%></h4>
+                    </div>
                 </div>
-            </div>
-            <div class="row item">
-                <div class="col-2 item_photo"></div>
-                <div class="col item_description">
-                    <h4>Item</h4>
-                </div>
-            </div>
-            <div class="row item">
-                <div class="col-2 item_photo"></div>
-                <div class="col item_description">
-                    <h4>Item</h4>
-                </div>
-            </div>
+            <% end %>
         </div>
+        <div class="row item">
+          <div class="col-2 item_photo"></div>
+          <div class="col item_description">
+            <h4>Item</h4>
+          </div>
+        </div>
+      </div>
 
         <div class="items_block">
             <h3>Things/Skills I need</h3>
-            <div class="row item">
-                <div class="col-2 item_photo"></div>
-                <div class="col item_description">
-                    <h4>Item</h4>
+            <% @trade_wanted_products.each do |item| %>
+                <div class="row item">
+                    <div class="col-2 item_photo"></div>
+                    <div class="col item_description">
+                        <h4><%= item.name %></h4>
+                    </div>
                 </div>
-            </div>
-            <div class="row item">
-                <div class="col-2 item_photo"></div>
-                <div class="col item_description">
-                    <h4>Item</h4>
-                </div>
-            </div>
-            <div class="row item">
-                <div class="col-2 item_photo"></div>
-                <div class="col item_description">
-                    <h4>Item</h4>
-                </div>
-            </div>
+            <% end %>
         </div>
+        <div class="row item">
+          <div class="col-2 item_photo"></div>
+          <div class="col item_description">
+            <h4>Item</h4>
+          </div>
+        </div>
+      </div>
     </div>
+  <% end %>
 
-</section>
+  </section>
